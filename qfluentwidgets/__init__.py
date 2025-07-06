@@ -15,7 +15,7 @@ Examples are available at https://github.com/zhiyiYo/PyQt-Fluent-Widgets/tree/Py
 __version__ = "1.8.1"
 __author__ = "zhiyiYo"
 
-from .components import *
-from .common import *
-from .window import *
 from ._rc import resource
+from .common import *
+from .components import *
+from .window import *

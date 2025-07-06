@@ -10,11 +10,10 @@ from qfluentwidgets import FluentTranslator
 from app.common.config import cfg
 from app.view.main_window import MainWindow
 
-
 # enable dpi scale
 if cfg.get(cfg.dpiScale) != "Auto":
-    os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "0"
-    os.environ["QT_SCALE_FACTOR"] = str(cfg.get(cfg.dpiScale))
+	os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "0"
+	os.environ["QT_SCALE_FACTOR"] = str(cfg.get(cfg.dpiScale))
 
 # create application
 app = QApplication(sys.argv)

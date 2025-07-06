@@ -3,34 +3,32 @@ import sys
 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
-
+from PySide6.QtWidgets import QApplication, QHBoxLayout, QVBoxLayout, QWidget
 from qfluentwidgets import ImageLabel
 
 
 class Demo(QWidget):
+	def __init__(self):
+		super().__init__()
+		self.imageLabel = ImageLabel("resource/Gyro.jpg")
+		self.gifLabel = ImageLabel("resource/boqi.gif")
+		self.vBoxLayout = QVBoxLayout(self)
 
-    def __init__(self):
-        super().__init__()
-        self.imageLabel = ImageLabel("resource/Gyro.jpg")
-        self.gifLabel = ImageLabel("resource/boqi.gif")
-        self.vBoxLayout = QVBoxLayout(self)
+		# change image
+		# self.imageLabel.setImage("resource/boqi.gif")
 
-        # change image
-        # self.imageLabel.setImage("resource/boqi.gif")
+		self.imageLabel.scaledToHeight(300)
+		self.gifLabel.scaledToHeight(300)
 
-        self.imageLabel.scaledToHeight(300)
-        self.gifLabel.scaledToHeight(300)
+		self.imageLabel.setBorderRadius(0, 30, 30, 0)
+		self.gifLabel.setBorderRadius(10, 10, 10, 10)
 
-        self.imageLabel.setBorderRadius(0, 30, 30, 0)
-        self.gifLabel.setBorderRadius(10, 10, 10, 10)
-
-        self.vBoxLayout.addWidget(self.imageLabel)
-        self.vBoxLayout.addWidget(self.gifLabel)
+		self.vBoxLayout.addWidget(self.imageLabel)
+		self.vBoxLayout.addWidget(self.gifLabel)
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    w = Demo()
-    w.show()
-    app.exec()
+if __name__ == "__main__":
+	app = QApplication(sys.argv)
+	w = Demo()
+	w.show()
+	app.exec()

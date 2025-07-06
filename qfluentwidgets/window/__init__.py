@@ -1,2 +1,10 @@
-from .fluent_window import FluentWindow, MSFluentWindow, SplitFluentWindow, FluentTitleBar, MSFluentTitleBar, SplitTitleBar, FluentBackgroundTheme
+from .fluent_window import (
+    FluentBackgroundTheme,
+    FluentTitleBar,
+    FluentWindow,
+    MSFluentTitleBar,
+    MSFluentWindow,
+    SplitFluentWindow,
+    SplitTitleBar,
+)
 from .splash_screen import SplashScreen
